@@ -1,4 +1,4 @@
-# Grin Compression
+# GrinZip
 
 **Author:** Reo Saito
 
