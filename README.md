@@ -9,11 +9,6 @@ A file compression/decompression tool implemented in Java using Huffman coding. 
 1. **Encoding:** Reads the input file byte-by-byte, builds a frequency map, constructs a Huffman tree from it, and writes the serialized tree + encoded bits to the output file. A magic number (`0x736`) is prepended to identify valid `.grin` files.
 2. **Decoding:** Reads the magic number to validate the file, reconstructs the Huffman tree from the serialized header, then decodes the bit stream back to the original bytes.
 
-## Usage
-
-```
-java Grin <encode|decode> <infile> <outfile>
-```
 
 **Examples:**
 ```
@@ -36,11 +31,15 @@ src/main/java/edu/grinnell/csc207/compression/
 - Java 21+
 - Maven (for building/testing)
 
-## Building & Testing
+## Building & Running
 
 ```
-mvn compile
-mvn test
+# Compiling
+mvn clean compile
+# Encode a file
+mvn exec:java -Dexec.args="encode <infile> <outfile>"
+# Decode a file
+mvn exec:java -Dexec.args="decode <infile> <outfile>"
 ```
 
 ## Notes
